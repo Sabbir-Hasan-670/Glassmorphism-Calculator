@@ -1,0 +1,107 @@
+body{
+    margin:0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+
+
+    /* create a large gradient that is bigger than the scene */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+
+    /* link the animation name, duration and loop type */
+
+    animation: gradientBG 15s ease infinite;
+}
+
+
+/* Define the movement */
+@keyframes gradientBG{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.calculator{
+    background-color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow:0px 10px 20px rgba(0,0,0,0.5); ;
+    width: 320px;
+
+
+        /*  Calculator Glassy*/
+        background: rgba(255,255,255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255, 0.2);
+}
+
+
+#display{
+    width: 95%;
+    height:60px;
+    font-size: 2rem;
+    text-align: right;
+    margin-bottom: 20px;
+    padding: 10px;
+    border:none;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    color: #000;
+}
+
+.keys{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    height:60px;
+    border-radius: 10px;
+    border: none;;
+    font-size: 1.5rem;
+    background-color: #696969;
+    color: #fffcfc;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: bold;
+
+}
+
+button:hover{
+    background-color:#fff;
+    color: black;
+}
+
+button[onclick="clearDisplay()"]{
+    background-color:orange;
+    color: #fff;
+}
+
+button[onclick="calculateResult('=')"]{
+    background-color:green;
+    color: #fff;
+}
+
+.operator{
+    background-color: #ff6347;
+    color: #fff;
+}
+
+.operator:hover{
+    background-color: red;
+    color: #fff;
+}
